@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+  
+{% block title %}Home{% endblock %}
+  
+{% block content %}
+<h1 class="h2">Dashboard</h1>
+<p>Welcome back, {{ username }}!</p>
+<form method="POST" action="{{ url_for('upload_image') }}" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="image">Image Upload</label>
+        <input type="file" name="image" id="image" accept="image/*">
+    </div>
+    <button type="submit" class="btn btn-primary">Upload and Process</button>
+</form>
+{% endblock %}
